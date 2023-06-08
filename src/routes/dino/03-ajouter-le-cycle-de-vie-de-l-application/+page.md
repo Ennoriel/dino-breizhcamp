@@ -5,22 +5,24 @@ slug: 03-ajouter-le-cycle-de-vie-de-l-application
 title: Ajouter le cycle de vie de l'application
 ---
 
+<script>
+	import CodeCactusArray from './CodeCactusArray.md';
+</script>
+
 ## créer les cactus
 
 De la même manière que le dinosaure, vous pouvez créer un cactus avec le code suivant :
 
 ```svelte
-<script lang="ts">
-  export let position = 0;
-  export let variant: number;
-
+<script>
+	export let position = 0;
+	export let variant: number;
 </script>
 
 <path
-  bind:this={ref}
-  d="M{position},170 h4 v16 h4 v-24 h4 l4,4 v20 h4 v-20 l4,4 v20 l-4,4 h-4 v32 h-8 v-32 h-8 Z"
-  stroke="none"
-  fill={variant === 1 ? 'lightgreen' : 'green'}
+	d="M{position},170 h4 v16 h4 v-24 h4 l4,4 v20 h4 v-20 l4,4 v20 l-4,4 h-4 v32 h-8 v-32 h-8 Z"
+	stroke="none"
+	fill={variant === 1 ? 'lightgreen' : 'green'}
 />
 ```
 
@@ -40,8 +42,49 @@ Pour aller plus loin, vous pouvez faire des variantes de cactus de différentes 
 
 ## Ajouter un objet de configuration des cactus
 
-Dans le jeu du dinosaures, plusieurs cactus sont présents en même temps sur le plateau. Même si c'est le dinosaure qui avance vers les cactus, dans le jeu, ce sont les cactus qui se déplacent vers les 
+Dans le jeu du dinosaures, plusieurs cactus sont présents en même temps sur le plateau. Les positions et variantes de cactus sont stockés dans un objet de configuration. Dans `Game.svelte`, vous pouvez ajouter une constante `cactuses` et l'initialiser avec un tableau avec un cactus.
 
-    1. création de Tree.svelte
-    2. objet de configuration des arbres
-    3. onMount + gestion de la boucle infinie
+Essayez de le passer comme props à `Board` puis d'utiliser la syntaxe de boucle pour définir plusieurs `Cactus` dans le DOM. La syntaxe de boucle en Svelte est la suivante :
+
+```svelte
+{#each my_array_variable as my_array_item}
+	{my_array_item.my_property}
+{/each}
+```
+
+<details>
+	<summary>Solution (avant de lire la solution, n'hésitez pas à lire la <a href="https://svelte.dev/docs#template-syntax-each" target="_blank">documentation Svelte</a> !)</summary>
+	<CodeCactusArray/>
+</details>
+
+## Mise en place de la logique du jeu
+
+Maintenant que nous avons tous les éléments graphiques du jeu, il va falloir passer à l'implémentation de la logique. Beaucoup de chose vont se faire dans le composant `<Game/>`.
+
+Pour gérer l'avancée du dinosaure, nous pouvons utiliser une variable `dinoPos` que nous incrémenterons dans une boucle infinie. La boucle infinie doit être initialisé à l'instantiation du composant : une méthode est là pour ça : `onMount` (et en réalité, c'est une des seule, utilisée à plus de 99% dans mon cas :p)
+
+```typescript
+import { onMount } from 'svelte';
+
+// initialisation des variables
+// ...
+
+onMount(() => {
+	const id = setInterval(() => {
+		// boucle infinie
+	}, 20);
+
+	return () => {
+		// nettoyage de la boucle infinie
+		clearInterval(id);
+	};
+});
+```
+
+`onMount` prend comme argument une méthode qui sera exécuté à l'instantiation du composant. Cette méthode peut renvoyer une méthode, si celle-ci est définie, elle sera appelé à la desctruction du composant, ce qui est bien pratique dans notre cas pour nettoyer la boucle infinie !
+
+Vous pouvez maintenant incrémenter la position du dinosaure dans la boucle infinie et utiliser la variable pour positionner les cactus aux bons endroits afin de simuler l'avancée du dinosaure.
+
+A ce stade, vous aurez l'impression que le dinosaure avance ! Mais voilà, il n'y a qu'un cactus !
+
+TODO ajout de cactus

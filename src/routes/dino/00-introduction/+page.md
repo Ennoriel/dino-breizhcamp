@@ -59,7 +59,6 @@ Voilà, c'était la petite partie théorique. Si vous n'avez pas tout compris, c
     2. objet de configuration des arbres
     3. onMount + gestion de la boucle infinie
 04. sauter !
-    1. création d'un composant Game.svelte
     2. on:click
 05. collision
     1. la théorie
