@@ -26,6 +26,21 @@ Le tutoriel se passera en plusieurs étapes, en commençant par l'installation. 
 
 Enfin, à la fin de chaque étape vous retrouverez des étapes facultatives pour aller plus loin et dont vous ne trouverez pas la solution avec le code source. Mais n'hésitez pas à me poser des questions !
 
+## Svelte & SvelteKit
+
+Svelte est un framework de développement d'interfaces avec quelques spécificités :
+
+1. c'est un compilateur, le code écrit sera compilé en code javascript executé par le navigateur (pas d'interprétation par un "moteur" Svelte) ;
+2. pas de DOM virtuel (si ça ne vous parle pas, ce n'est pas très grave puisqu'il n'y en n'a pas !);
+3. très proche du HTML, Javascript et css natifs, à tel point qu'un fichier HTML est valide en Svelte et vient ajouter des outils supplémentaires ;
+4. super réactif et gère super facilement les animations.
+
+Vous pouvez consulter [la documentation de Svelte](https://svelte.dev/docs) et même écrire du code Svelte en ligne dans l'[éditeur en ligne (REPL)](https://svelte.dev/repl).
+
+SvelteKit est un framework pour construire des applications (fullstack : front + back !) basé sur le framework Svelte. Il permet de construire des applications de type SPA (application sur une seule page comme GMail), des MPA (gestion des routes / urls nativement) avec du rendu côté serveur =&gt; beaucoup plus performant ! Vous pouvez consulter [la documentation de SvelteKit](https://kit.svelte.dev/docs/introduction) en ligne.
+
+Voilà, c'était la petite partie théorique. Si vous n'avez pas tout compris, c'est pas très grave, passons à la pratique !
+
 00. introduction
     1. svelte & svelte kit
     2. liens vers la documentation, tutoriels, repl
@@ -39,7 +54,7 @@ Enfin, à la fin de chaque étape vous retrouverez des étapes facultatives pour
     1. dans +page.svelte
     2. création de Board.svelte
     3. création de Dino.svelte
-03. ajouter du cycle de vie
+03. ajouter le cycle de vie de l'application
     1. création de Tree.svelte
     2. objet de configuration des arbres
     3. onMount + gestion de la boucle infinie

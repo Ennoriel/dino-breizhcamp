@@ -22,3 +22,10 @@
 		</p>
 	{/await}
 </article>
+
+<style>
+	article {
+		max-width: 800px;
+		margin: auto;
+	}
+</style>
