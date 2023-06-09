@@ -15,18 +15,16 @@ Le contenu que vous pouvez voir dans votre navigateur <a href="http://localhost:
 Commencer par supprimer le conteu du fichier et ajouter un titre :
 
 ```svelte
-<h1>
-  Le super jeu du dinosaure du BreizhCamp !
-</h1>
+<h1>Le super jeu du dinosaure du BreizhCamp !</h1>
 ```
 
 Vous pouvez ajouter du style dans une balise de style (après le html) comme suit :
 
 ```svelte
 <style>
-    h1 {
-        font-size: 48px;
-    }
+	h1 {
+		font-size: 48px;
+	}
 </style>
 ```
 
@@ -46,7 +44,7 @@ Le plateau du jeu est un élément HTML de type `svg`. Vous pouvez donc commence
 
 1. définir le conteneur `svg`.
 2. ajouter un fond que vous pouvez choisir au choix. Moi j'ai pris un fond gris très simple !
-2. ajouter un sol. Dans un élément `svg` l'origine est en haut à gauche, la valeur de x croissante vers la droite et de y croissante vers le bas (contre intuitif).
+3. ajouter un sol. Dans un élément `svg` l'origine est en haut à gauche, la valeur de x croissante vers la droite et de y croissante vers le bas (contre intuitif).
 
 <details>
   <summary>Solution</summary>
@@ -59,8 +57,12 @@ Vous pouvez ajouter le dinosaure :
 
 ```svelte
 <g>
-	<path d="M80,178h-4v14h-4v6h-4v4h-4v16h4v4h-8v-12h-4v-4h-4v4h-4v4h-4v4h4v4h-8v-16h-4v-4h-4v-4h-4v-4h-4v-4h-4v-24h4v8h4v4h4v4h8v-4h4v-4h6v-4h6v-4h4v-26h4v-4h32v4h4v18h-20v4h12v4h-16v8h8v8h-4v-4z" stroke="none" fill="#535353" />
-	<path d="M68,142v4h4v-4h-4z" stroke="none" fill="#EFEFEF"/>
+	<path
+		d="M80,178h-4v14h-4v6h-4v4h-4v16h4v4h-8v-12h-4v-4h-4v4h-4v4h-4v4h4v4h-8v-16h-4v-4h-4v-4h-4v-4h-4v-4h-4v-24h4v8h4v4h4v4h8v-4h4v-4h6v-4h6v-4h4v-26h4v-4h32v4h4v18h-20v4h12v4h-16v8h8v8h-4v-4z"
+		stroke="none"
+		fill="#535353"
+	/>
+	<path d="M68,142v4h4v-4h-4z" stroke="none" fill="#EFEFEF" />
 </g>
 ```
 
@@ -76,7 +78,7 @@ Créer le dossier `lib` dans `src` à côté de `routes` si ce n'est pas déjà 
 
 Créer le dossier `components` dans le dossier `lib`.
 
-Tout fichier avec l'extension `.svelte` pourra être utilisé comme composant Svelte. Par convention, les composants commencent avec une majuscule. Vous pouvez donc créer 
+Tout fichier avec l'extension `.svelte` pourra être utilisé comme composant Svelte. Par convention, les composants commencent avec une majuscule. Vous pouvez donc créer
 
 - `Dino.svelte` et y ajouter le code du dinosaure
 - `Board.svelte` : pour utiliser le dinosaure dans le plateau, il faudra l'importer comme suite :
@@ -87,9 +89,9 @@ Tout fichier avec l'extension `.svelte` pourra être utilisé comme composant Sv
 </script>
 
 <svg viewBox="0 0 1000 240" bind:this={svgRef}>
-	<rect x="0" y="0" width="1000" height="240" fill="#EFEFEF"/>
-	<Dino/>
-	<path d="M0,230H1000V226H0Z" stroke="none" fill="#535353"/>
+	<rect x="0" y="0" width="1000" height="240" fill="#EFEFEF" />
+	<Dino />
+	<path d="M0,230H1000V226H0Z" stroke="none" fill="#535353" />
 </svg>
 ```
 

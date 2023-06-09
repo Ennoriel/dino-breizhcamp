@@ -15,11 +15,13 @@
 		...
 	{:then tutos}
 		{@const nextTuto = getNextTuto(tutos, slug)}
-		<p>
-			Vous avez fini l'étape, bravo ! Vous pouvez passer à l'étape suivante : <a
-				href={nextTuto?.slug}>{nextTuto?.title}</a
-			>.
-		</p>
+		{#if nextTuto}
+			<p>
+				Vous avez fini l'étape, bravo ! Vous pouvez passer à l'étape suivante : <a
+					href={nextTuto?.slug}>{nextTuto?.title}</a
+				>.
+			</p>
+		{/if}
 	{/await}
 </article>
 

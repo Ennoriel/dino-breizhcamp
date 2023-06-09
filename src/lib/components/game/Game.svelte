@@ -9,7 +9,7 @@
 	let dinoPos = 0;
 
 	let lost = false;
-	let bestScore = 0;
+	let highScore = 0;
 
 	let svgRef: SVGSVGElement;
 	let cactusRef: SVGPathElement;
@@ -30,9 +30,9 @@
 		const id = setInterval(() => {
 			if (lost) return;
 
-			// increment dinosaur position & best score
+			// increment dinosaur position & high score
 			dinoPos = dinoPos + CONST.SPEED;
-			bestScore = Math.max(bestScore, dinoPos);
+			highScore = Math.max(highScore, dinoPos);
 
 			// Add a cactus if the last one is too far left
 			const lastCactusPos = cactuses[cactuses.length - 1].position;
@@ -136,5 +136,5 @@
 	Score : {(dinoPos / 10).toFixed()}
 </p>
 <p>
-	Meilleur score : {(bestScore / 10).toFixed()}
+	Meilleur score : {(highScore / 10).toFixed()}
 </p>

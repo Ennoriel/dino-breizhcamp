@@ -9,9 +9,9 @@ const b = (4 * MAX_JUMP_Y) / MAX_JUMP_X; // b coefficient
 const f = (x: number) => a * x * x + b * x; // y = a * x^2 + b*x
 
 if (jumping && jumpedAt <= MAX_JUMP_X) {
-    // if the jump is in progress, we compute the jump height
-    jumpPos = f(jumpedAt);
+	// if the jump is in progress, we compute the jump height
+	jumpPos = f(jumpedAt);
 } else {
-    jumping = false;
+	jumping = false;
 }
 ```

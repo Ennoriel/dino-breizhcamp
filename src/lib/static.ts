@@ -3,7 +3,7 @@ import type { Tuto } from '$lib/types/tuto';
 type GlobReturn<T> = Record<string, () => Promise<{ metadata: T }>>;
 type Glob<T> = [string, () => Promise<{ metadata: T }>];
 
-async function convertMetadata<T>([, page]: Glob<T>) {
+async function convertMetadata([, page]: Glob<Omit<Tuto, 'step'>>) {
 	const { metadata } = await page();
 	return {
 		...metadata,
@@ -13,11 +13,10 @@ async function convertMetadata<T>([, page]: Glob<T>) {
 
 export async function getTutos() {
 	const tutos = await Promise.all(
-		Object.entries(import.meta.glob('/src/routes/dino/*/+page.md') as GlobReturn<Tuto>).map(
-			async (arg) => convertMetadata(arg)
-		)
+		Object.entries(
+			import.meta.glob('/src/routes/tuto/dino-game/*/+page.md') as GlobReturn<Tuto>
+		).map(async (arg) => convertMetadata(arg))
 	);
-	// tutos.sort((a, b) => Date.parse(b.date) - Date.parse(a.date));
 	return tutos;
 }
 

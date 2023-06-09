@@ -25,7 +25,7 @@ Dans notre cas, nous allons utiliser une méthode bien pratique des éléments s
 
 J'ai défini 5 points aux extrémités du dinosaures, pour lesquels on va aller vérifier qu'ils ne sont pas dans le premier cactus.
 
-Les fameux points : 
+Les fameux points :
 
 ```typescript
 export const DINO_EDGES = [
@@ -66,7 +66,8 @@ En svelte, pour récupérer la référence d'un objet, on peut utiliser `documen
 Dans le composant cactus, on aura maintenant le composant complet :
 
 ```svelte
-<script> // rajouter lang="ts"
+<script>
+	// rajouter lang="ts"
 	export let position = 0;
 	export let variant: number;
 
@@ -84,7 +85,8 @@ Dans le composant cactus, on aura maintenant le composant complet :
 et le `Board` :
 
 ```svelte
-<script> // ajouter lang="ts"
+<script>
+	// ajouter lang="ts"
 	import Dino from './Dino.svelte';
 	import Cactus from './Cactus.svelte';
 	import type { Cactus as CactusType } from './utils.js';

@@ -15,7 +15,7 @@ Créons donc un nouveau projet !
 
 Pour ce faire, vous devez avoir un ordinateur, si ce n'est pas le cas, cherchez un ami avec qui travailler ! Sur cette ordinateur, vous devez avoir node (minimum 14) / npm. Si ce n'est pas le cas, vous pouvez [télécharger node en ligne](https://nodejs.org/en) (npm vient automatiquement avec node).
 
-> vous êtes libres (et même encouragés) d'utiliser yarn ou pnpm 
+> vous êtes libres (et même encouragés) d'utiliser yarn ou pnpm
 
 ## Créer le projet
 

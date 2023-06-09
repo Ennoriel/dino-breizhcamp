@@ -40,8 +40,9 @@ Pour "écouter" un événément clavier sur l'ensemble de la fenêtre il est pos
 Vous pouvez copier le code et compléter pour changer les valeurs de `jumping` et réinitialiser `jumpedAt`.
 
 Dans la boucle infinie, il faut maintenant calculer la position `jumpPos` en fonction des deux premières variables. Vous pouvez implémenter une version simple dans un premier temps :
- - position haute si l'on vient d'appuyer sur la touche espace
- - retour en position normale sinon
+
+- position haute si l'on vient d'appuyer sur la touche espace
+- retour en position normale sinon
 
 Dans un second temps, il faut calculer les coefficients d'une équation du second degré pour avoir un saut plus propre. Je vous passe les détails et vous pouvez directement regarder la correction ;)
 
@@ -53,7 +54,7 @@ Dans un second temps, il faut calculer les coefficients d'une équation du secon
 Nous n'avions pas défini de props au composant `Dino`, c'est le moment d'ajouter une props pour fixer sa hauteur. Vous pouvez alors calculer sa hauteur avec la propriété html `transform` :
 
 ```html
-<g transform="translate(0 -{position})" >
+<g transform="translate(0 -{position})"></g>
 ```
 
 A ce stade, vous devriez avoir un dinosaure qui avance (ou qui semble avancer) et qui saute !

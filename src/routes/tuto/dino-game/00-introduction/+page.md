@@ -41,34 +41,7 @@ SvelteKit est un framework pour construire des applications (fullstack : front +
 
 Voilà, c'était la petite partie théorique. Si vous n'avez pas tout compris, c'est pas très grave, passons à la pratique !
 
-00. introduction
-    1. svelte & svelte kit
-    2. liens vers la documentation, tutoriels, repl
-01. installation
-    1. création projet svelte
-    2. installation des dépendances
-    3. tour des fichiers de config (vite, svelte, tsconfig, package)
-    4. tour des fichiers "source" (dossier src, static)
-    5. lancement du projet
-02. créer le dino
-    1. dans +page.svelte
-    2. création de Board.svelte
-    3. création de Dino.svelte
-03. ajouter le cycle de vie de l'application
-    1. création de Tree.svelte
-    2. objet de configuration des arbres
-    3. onMount + gestion de la boucle infinie
-04. sauter !
-    2. on:click
-05. collision
-    1. la théorie
-    2. la pratique
-    3. recommancer le jeu
-06. gestion du score
-    1. simple
-    2. gérer un highscore board
-
-- vous n'aurez pas le même code source que moi, mais ce n'est pas grave !
+> vous n'aurez pas le même code source que moi, mais ce n'est pas grave !
 
 <style>
     .board-wrapper {

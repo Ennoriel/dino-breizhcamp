@@ -26,14 +26,14 @@ De la même manière que le dinosaure, vous pouvez créer un cactus avec le code
 />
 ```
 
-Dans ce composant, nous avons défini nos deux premières propriétés (props pour les intimes) `position` et `variant`. Une variable devient props dès qu'elle est exportée avec le mot clé `export`. Dans le cas d'un projet Svelte avec typescript, ces propriétés peuvent être typées ! 
+Dans ce composant, nous avons défini nos deux premières propriétés (props pour les intimes) `position` et `variant`. Une variable devient props dès qu'elle est exportée avec le mot clé `export`. Dans le cas d'un projet Svelte avec typescript, ces propriétés peuvent être typées !
 
 `variant` détermine la couleur de l'arbre via l'attribut html `fill` ; `position` définit la position du cactus.
 
 Vous pouvez importer le cactus dans l'arbre et passer des propriétés fictives pour le moment :
 
 ```svelte
-<Cactus position={500} variant={1}/>
+<Cactus position={500} variant={1} />
 ```
 
 > A ce stade, vous avez tous les composants Svelte pour continuer. Nous allons les modifier pour finaliser le jeu. Si vous êtez perdu, vous pouvez retrouver le code source sur Github.
@@ -85,6 +85,4 @@ onMount(() => {
 
 Vous pouvez maintenant incrémenter la position du dinosaure dans la boucle infinie et utiliser la variable pour positionner les cactus aux bons endroits afin de simuler l'avancée du dinosaure.
 
-A ce stade, vous aurez l'impression que le dinosaure avance ! Mais voilà, il n'y a qu'un cactus !
-
-TODO ajout de cactus
+A ce stade, vous aurez l'impression que le dinosaure avance !
