@@ -1,5 +1,8 @@
 <div>
-	<img src="/breizhassic-world.png" />
+	<img
+		src="/breizhassic-world.png"
+		alt="logo du BreihCamp customisé avec un dinosaure de Jurassic Pafc"
+	/>
 
 	<span>
 		<h1>
