@@ -11,7 +11,7 @@ title: Page de détails d'un dinosaure
 
 ## Créer une page dédié pour chaque dinosaure
 
-Nous allons afficher la liste avec des informations limitées pour chaque dinosaure et pour chaque dinosaure, une page dédiée, plus complète. Pour se faire, il faut créer une route avec un **paramètre**. Pour ce faire, rien de plus simple, il faut créer un dossier avec un nom de paramètre entre crochet : `/routes/dinodex/[name]`.
+Nous allons afficher la liste avec des informations limitées pour chaque dinosaure et pour chaque dinosaure, une page dédiée, plus complète. Pour ce faire, il faut créer une route avec un **paramètre**. Rien de plus simple, il faut créer un dossier avec un nom de paramètre entre crochets : `/routes/dinodex/[name]`.
 
 Vous pouvez alors créer le fichier `+page.svelte`et `+page.server.ts`. Le paramètre `name` sera disponible via l'argument `params` :
 

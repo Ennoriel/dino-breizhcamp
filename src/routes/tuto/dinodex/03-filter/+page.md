@@ -11,7 +11,7 @@ title: Filtrer
 
 ## Filtrer côté front
 
-Dans un premier temps, nous allons filtrer les résultats affichés côté front, dans un second temps, nous le feront côté back.
+Dans un premier temps, nous allons filtrer les résultats affichés côté front, dans un second temps, nous le ferons côté back.
 
 Le filtrage côté front, dans le fichier `+page.svelte`, est présenté uniquement pour voir des fonctionnalités de Svelte mais nous le passerons côté back ensuite.
 
@@ -39,7 +39,7 @@ Pour récupérer le contenu de l'input, il y a plusieurs solutions, la plus simp
 </label>
 ```
 
-Le mot clé `bind:` permet d'avoir le binding dans les deux sens : si vous initialisez `name`, cela initialisera le champs et vous récupérerez le contenu du champs dans la variable `name`.
+Le mot clé `bind:` permet d'avoir le binding dans les deux sens : si vous initialisez `name`, cela initialisera le champ et vous récupérerez le contenu du champ dans la variable `name`.
 
 Pour utiliser et filtrer de manière réactive, vous pouvez utiliser la strucutre `$:` :
 
@@ -68,9 +68,9 @@ Pour utiliser et filtrer de manière réactive, vous pouvez utiliser la strucutr
 {/each}
 ```
 
-> Le contenu du bloc `$:` sera réexécuté dès qu'une des valeur à l'intérieur change.
+> Le contenu du bloc `$:` sera réexécuté dès qu'une des valeurs à l'intérieur change.
 
-A ce stade, la liste des dinosaures est filtré en temps réel !
+A ce stade, la liste des dinosaures est filtrée en temps réel !
 
 Si vous souhaitez ajouter des filtres supplémentaires, sachez que les binding des checkbox et radio est un peu différent. N'hésitez pas à aller lire la [documentation à ce sujet](https://svelte.dev/docs#template-syntax-element-directives-bind-property-block-level-element-bindings) et ajouter des filtres !
 
@@ -87,7 +87,7 @@ Pour ce faire, vous pouvez supprimer le binding précédement créé et on va pa
 </form>
 ```
 
-En cliquant sur le bouton, le formulaire va nativement rediriger l'utilisateur avec un query param `name`, par exemple `/dinodex?name=rex`. Celle-ci est géré par la même route.
+En cliquant sur le bouton, le formulaire va nativement rediriger l'utilisateur avec un query param `name`, par exemple `/dinodex?name=rex`. Celui-ci est géré par la même route.
 
 Il est alors possible de récupérer le query param côté back, dans `+page.server.ts` :
 
@@ -107,7 +107,7 @@ export const load = async ({ url }) => {
 }
 ```
 
-Ce n'est pas plus compliqué que ça ! L'avantage de ce mécanisme qui pourrait sembler archaïque (formulaire natif) est en fait super intéressant car il à l'avantage de fonctionner sans javascript côté client !
+Ce n'est pas plus compliqué que ça ! L'avantage de ce mécanisme qui pourrait sembler archaïque (formulaire natif) est en fait super intéressant car il a l'avantage de fonctionner sans javascript côté client !
 
 ## Pagination
 
@@ -115,7 +115,7 @@ Je vous laisse réfléchir à la meilleur manière d'implémenter la pagination.
 
 <details>
   <summary>Petite aide (conseillée)</summary>
-  Je vous conseille de fonctionner avec des query param et d'ajouter des liens vers `/dinodex?page=1`, `/dinodex?page=2`, etc. N'oubliez pas de prendre en compte vos filtres déjà existant !
+  Je vous conseille de fonctionner avec des query param et d'ajouter des liens vers `/dinodex?page=1`, `/dinodex?page=2`, etc. N'oubliez pas de prendre en compte vos filtres déjà existants !
   
   Si vous avez besoin de repasser le paramètre `page` du serveur au front, vous pouvez le passer en plus de `dinos` !
 </details>
