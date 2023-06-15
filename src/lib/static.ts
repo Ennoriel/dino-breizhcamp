@@ -20,7 +20,7 @@ export async function getTutos() {
 	return tutos;
 }
 
-export function getNextTuto(tutos: Array<Tuto>, slug: string) {
-	const currTuto = tutos.find((tuto) => tuto.slug === slug) || { step: 0 };
-	return tutos.find((tuto) => tuto.step === currTuto?.step + 1);
+export function getNextTuto(tutos: Array<Tuto> | undefined, slug: string) {
+	const currTuto = tutos?.find((tuto) => tuto.slug === slug) || { step: 0 };
+	return tutos?.find((tuto) => tuto.step === currTuto?.step + 1);
 }

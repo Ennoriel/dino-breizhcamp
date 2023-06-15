@@ -10,7 +10,12 @@
 		</h1>
 
 		<ul>
-			<!-- <li>Tutoriel 1 : <a href="/tuto/dinodex/00-introduction">coming soon : dinodex</a></li> -->
+			<li>
+				<a href="/presentation" data-sveltekit-preload-data="tap" data-sveltekit-reload
+					>présentation</a
+				>
+			</li>
+			<li>Tutoriel 1 : <a href="/tuto/dinodex/00-introduction">dinodex</a></li>
 			<li>Tutoriel 2 : <a href="/tuto/dino-game/00-introduction">dino game</a></li>
 		</ul>
 	</span>

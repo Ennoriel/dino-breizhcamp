@@ -1,0 +1,20 @@
+export type Dino = {
+	name: string;
+	namedBy?: string;
+	meaning: string;
+	picture: string;
+	pronounciation: string;
+	content?: string;
+	diet: string;
+	food?: string;
+	eraItLived?: string;
+	whenItLived: Array<number>;
+	teeth?: string;
+	length?: number;
+	weight?: string;
+	foundIn: string;
+	howItMoved?: string;
+	taxonomy: Array<string>;
+	dinoType: string;
+	speciesType: string;
+};
