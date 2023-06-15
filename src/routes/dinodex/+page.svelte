@@ -1,5 +1,6 @@
 <script lang="ts">
 	import DinoCard from './DinoCard.svelte';
+	import Pagination from './Pagination.svelte';
 
 	export let data;
 
@@ -12,7 +13,7 @@
 	<h2>Filtres</h2>
 
 	<form>
-		<input name="dino-name" id="dino-name" />
+		<input name="name" />
 		<button type="submit">Filtrer</button>
 	</form>
 
@@ -31,28 +32,7 @@
 		{/each}
 	</ul>
 
-	<nav>
-		pages
-		{#if data.page > 4}
-			<a href="/dinodex?page=0{data.name ? `&dino-name=${data.name}` : ''}" class="link-page">1</a> ...
-		{/if}
-		{#each new Array(7) as _, page}
-			{@const nextPage = data.page + page - 3}
-			{#if nextPage >= 0 && nextPage <= nbPage}
-				<a
-					href="/dinodex?page={nextPage}{data.name ? `&dino-name=${data.name}` : ''}"
-					class="link-page"
-					aria-current={nextPage === data.page ? 'page' : undefined}>{nextPage + 1}</a
-				>
-			{/if}
-		{/each}
-		{#if data.page < nbPage - 4}
-			... <a
-				href="/dinodex?page={nbPage}{data.name ? `&dino-name=${data.name}` : ''}"
-				class="link-page">{nbPage + 1}</a
-			>
-		{/if}
-	</nav>
+	<Pagination name={data.name} page={data.page} {nbPage} />
 </div>
 
 <style>

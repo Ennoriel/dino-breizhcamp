@@ -8,4 +8,4 @@
 	<DinoCard dino={data} />
 {/if}
 
-<a href="/dinodex">Back to dinodex</a>
+<a href="/dinodex">Retourner au dinodex</a>

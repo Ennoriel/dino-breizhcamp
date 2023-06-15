@@ -34,6 +34,8 @@ export const actions = {
 		};
 
 		// save dino to db
+
+		// then redirects in case of a successful save
 		throw redirect(303, '/dinodex');
 	}
 };

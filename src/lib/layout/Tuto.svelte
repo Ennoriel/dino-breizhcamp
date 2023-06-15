@@ -1,10 +1,10 @@
 <script>
 	import { getNextTuto } from '$lib/static';
 
-	const { title, slug } = $$restProps;
+	const { title, slug, tuto } = $$restProps;
 	export let data;
 
-	$: nextTuto = getNextTuto(data?.tutos, slug);
+	$: nextTuto = getNextTuto(data?.tutos, slug, tuto);
 </script>
 
 <article>

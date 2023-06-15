@@ -13,14 +13,15 @@ async function convertMetadata([, page]: Glob<Omit<Tuto, 'step'>>) {
 
 export async function getTutos() {
 	const tutos = await Promise.all(
-		Object.entries(
-			import.meta.glob('/src/routes/tuto/dino-game/*/+page.md') as GlobReturn<Tuto>
-		).map(async (arg) => convertMetadata(arg))
+		Object.entries(import.meta.glob('/src/routes/tuto/**/+page.md') as GlobReturn<Tuto>).map(
+			async (arg) => convertMetadata(arg)
+		)
 	);
 	return tutos;
 }
 
-export function getNextTuto(tutos: Array<Tuto> | undefined, slug: string) {
-	const currTuto = tutos?.find((tuto) => tuto.slug === slug) || { step: 0 };
-	return tutos?.find((tuto) => tuto.step === currTuto?.step + 1);
+export function getNextTuto(tutos: Array<Tuto> | undefined, slug: string, tutoName: string) {
+	const currTutos = tutos?.filter((tuto) => tuto.tuto === tutoName);
+	const currTuto = currTutos?.find((tuto) => tuto.slug === slug) || { step: 0 };
+	return currTutos?.find((tuto) => tuto.step === currTuto?.step + 1);
 }
