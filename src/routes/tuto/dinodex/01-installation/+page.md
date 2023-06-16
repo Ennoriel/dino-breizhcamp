@@ -9,7 +9,7 @@ title: Installation
     import CreateProject from '../../dino-game/01-installation/CreateProject.md';
 </script>
 
-Si vous avez déjà créé le projet avec le tutoriel dino-game, vous pouvez aller à la [séction plus bas pour télécharger les ressources statiques](#ressources-statiques) !
+Si vous avez déjà créé le projet avec le tutoriel dino-game, vous pouvez aller à la [section plus bas pour télécharger les ressources statiques](#ressources-statiques) !
 
 <CreateProject/>
 

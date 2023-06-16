@@ -9,11 +9,11 @@ title: Liste des dinosaures
 
 Nous allons commencer par afficher la liste des dinosaures. Si vous avez déjà fait le tutoriel dino-game, vous pouvez créer une route supplémentaire. Pour cela, il suffit de créer un dossier avec un fichier `+page.svelte`. La page sera consultable sur la même url que l'arborescence de dossier créé.
 
-Tout fichier `+page.svelte` créra une route supplémentaire. Il s'agit d'un composant Svelte, presque comme les autres. En particulier, comme tout composant Svelte, il sera constitué de 3 parties :
+Tout fichier `+page.svelte` créera une route supplémentaire. Il s'agit d'un composant Svelte, presque comme les autres. En particulier, comme tout composant Svelte, il sera constitué de 3 parties :
 
 - le script, à l'intérieur de balises `<script></script>` (ou éventuellement `<script lang="ts"></script>` pour un script typescript) : le code métier du composant se trouvera ici ;
 - les balises HTML, directement dans le fichier, par convention, en dessous du `script` ;
-- le style, à l'intérieur de balises `<style></style>`, ou l'on peut écrire du css, qui ne sera appliqués qu'aux balises HTML du composant courant.
+- le style, à l'intérieur de balises `<style></style>`, ou l'on peut écrire du css, qui ne sera appliqué qu'aux balises HTML du composant courant.
 
 Chaque partie est facultative.
 
@@ -49,7 +49,7 @@ Vous pouvez déjà, à ce stade définir et importer la police Jurassic Parc :
 </style>
 ```
 
-> A ce stade, vous avez du vous rendre compte que l'application se mets à jour automatiquement dans votre navigateur à l'aide du **hot reloading** ! Elle n'est pas belle la vie de développeur moderne ?
+> A ce stade, vous avez dû vous rendre compte que l'application se met à jour automatiquement dans votre navigateur à l'aide du **hot reloading** ! Elle n'est pas belle la vie de développeur moderne ?
 
 ## Afficher la liste des dinosaures
 
@@ -112,7 +112,7 @@ Si vous souhaitez afficher une propriété conditionnellement, il existe un bloc
 {/if}
 ```
 
-Vous pouvez continuer jusqu'à obtenir des cartes, les affichers proprement, de manière responsive.
+Vous pouvez continuer jusqu'à obtenir des cartes, les afficher proprement, de manière responsive.
 
 ## Créer un composant
 
@@ -190,9 +190,9 @@ export type Dino = {
 
 ## Mettre en place un serveur !
 
-Jusqu'à maintenant, nous avions importé les dinosaures directement dans la page. Si nous avions souhaité créer un site web statique avec des données fixes, c'était une très bonne solution et SvelteKit peut être configurer facilement pour générer un site statique (sans serveur).
+Jusqu'à maintenant, nous avions importé les dinosaures directement dans la page. Si nous avions souhaité créer un site web statique avec des données fixes, c'était une très bonne solution et SvelteKit peut être configuré facilement pour générer un site statique (sans serveur).
 
-Si nous travaillions avec une base de données, on ne pourrais pas faire ça. On va considérer que notre fichier est notre base de données. On va donc déplacer le fichier dans `/src/lib/server`. Ce dossier est particulier : vous ne pourrez pas importer son contenu depuis une page directement ! (vous pouvez essayer, ça ne devrait pas marcher !)
+Si nous travaillions avec une base de données, on ne pourrait pas faire ça. On va considérer que notre fichier est notre base de données. On va donc déplacer le fichier dans `/src/lib/server`. Ce dossier est particulier : vous ne pourrez pas importer son contenu depuis une page directement ! (vous pouvez essayer, ça ne devrait pas marcher !)
 
 Il va alors falloir remonter les données via un fichier back. Celui ci est à créer au même endroit que la route, avec le nom `+page.server.ts` avec le contenu suivant :
 

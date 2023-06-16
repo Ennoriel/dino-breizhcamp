@@ -35,9 +35,9 @@ Vous pouvez créer une troisième route `/create` qui sera utilisée pour la cr�
 </form>
 ```
 
-Il n'y a pas toutes les propriétés du dinosaure mais pour la démonstration, c'est suffisant. La méthode `POST` sur le formulaire aura pour incidénce de ne pas ajouter les valeurs du formulaire dans l'url mais via un appel HTTP post et un passage des valeurs en **formData**.
+Il n'y a pas toutes les propriétés du dinosaure mais pour la démonstration, c'est suffisant. La méthode `POST` sur le formulaire aura pour incidence de ne pas ajouter les valeurs du formulaire dans l'url mais via un appel HTTP post et un passage des valeurs en **formData**.
 
-Cette requête pourra être récupéré dans le même fichier `+page.server.ts` dans l'objet `actions`, propriété `default` (il est possible de définir plusieurs actions pour une route) :
+Cette requête pourra être récupérée dans le même fichier `+page.server.ts` dans l'objet `actions`, propriété `default` (il est possible de définir plusieurs actions pour une route) :
 
 ```svelte
 export const actions = {
@@ -63,7 +63,7 @@ if (!name || typeof name !== 'string' || name.length < 3) {
 }
 ```
 
-La méthode `fail` permet de retourner un objet d'erreur au front. Cette objet sera retourné dans l'attribut exporté `form` (se sont les deux seules attributs particuliers avec `data` sur une route) :
+La méthode `fail` permet de retourner un objet d'erreur au front. Cet objet sera retourné dans l'attribut exporté `form` (ce sont les deux seuls attributs particuliers avec `data` sur une route) :
 
 ```svelte
 <script>
@@ -105,6 +105,6 @@ Vous avez vu à la fois un pan minuscule de Svelte et SvelteKit et à la fois un
 
 Vous pouvez continuer à ajouter des fonctionnalités, en regardant éventuellement la documentation [Svelte](https://svelte.dev/docs), la documentation [SvelteKit](https://kit.svelte.dev/docs/introduction) ou le [tutoriel interactif](https://learn.svelte.dev/tutorial/introducing-sveltekit).
 
-Vous pouvez également rejoint le [Discord anglophone](https://svelte.dev/chat) ou le [Discord francophone](https://discord.gg/bk2PE5Qs6).
+Vous pouvez également rejoindre le [Discord anglophone](https://svelte.dev/chat) ou le [Discord francophone](https://discord.gg/bk2PE5Qs6).
 
 Enfin, vous pouvez passer à [la deuxième partie : le jeu du dinosaure](/tuto/dino-game/00-introduction) !
