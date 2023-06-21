@@ -20,3 +20,10 @@
 		</ul>
 	</Slide>
 </Slide>
+
+<style>
+	h1 {
+		font-size: 72px !important;
+		margin-bottom: 72px !important;
+	}
+</style>

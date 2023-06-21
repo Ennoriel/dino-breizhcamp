@@ -6,7 +6,9 @@ title: Collision
 ---
 
 <script>
+	import CodeBinding from './CodeBinding.md';
 	import CodeCollision from './CodeCollision.md';
+	import CodeDeleteFirstCactus from './CodeDeleteFirstCactus.md';
 </script>
 
 On commence à s'approcher de la fin. Le dinosaure peut sauter et avancer mais impossible de perdre ! Il est temps de gérer les collisions.
@@ -24,6 +26,8 @@ Dans notre cas, nous allons utiliser une méthode bien pratique des éléments s
 ## la pratique
 
 J'ai défini 5 points aux extrémités du dinosaure, pour lesquels on va aller vérifier qu'ils ne sont pas dans le premier cactus. Si l'un des points et dans le premier cactus, on considérera que le jeu est perdu.
+
+Dans notre cas actuel, il va falloir supprimer les éléments déjà passés par le dinosaure pour que le premier dinosaure corresponde toujours à celui que le dinosaure est en train ou va sauter par-dessus.
 
 Les fameux points :
 
@@ -61,7 +65,7 @@ export const DINO_EDGES = [
 
 Pour vérifier que ces points sont situés dans ou en dehors du premier cactus, nous devrons écrire quelque chose similaire à : `cactus.isPointInFill(points)`. Nous aurons donc besoin de la référence au premier cactus ainsi que la référence à l'élément `<svg>` pour instancier un `Point`.
 
-En svelte, pour récupérer la référence d'un objet, on peut utiliser `document.getElementById()` mais il y a une solution beaucoup plus simple, en utilisant la notation de binding de référence d'éléments HTML :
+En svelte, pour récupérer la référence d'un objet, on peut utiliser `document.getElementById()` mais il y a une solution beaucoup plus simple, en utilisant la notation de binding de référence d'éléments HTML : `<element bind:ref={variable}`.
 
 Dans le composant cactus, on aura maintenant le composant complet :
 
@@ -82,42 +86,12 @@ Dans le composant cactus, on aura maintenant le composant complet :
 />
 ```
 
-et le `Board` :
+Comme la `ref` est également exportée, il est alors possible de la binder de la même manière dans le composant `Board`. Dans ce composant, nous avons une liste de cactus et ne souhaitons nous binder qu'au premier. Il faut alors utiliser la structure conditionnelle `#if` pour ne binder que le premier cactus.
 
-```svelte
-<script>
-	// ajouter lang="ts"
-	import Dino from './Dino.svelte';
-	import Cactus from './Cactus.svelte';
-	import type { Cactus as CactusType } from './utils.js';
-
-	export let position = {
-		x: 0,
-		y: 0
-	};
-	export let cactuses: Array<CactusType> = [];
-
-	export let svgRef: SVGSVGElement;
-	export let cactusRef: SVGPathElement;
-</script>
-
-<svg viewBox="0 0 1000 240" bind:this={svgRef}>
-	<rect x="0" y="0" width="1000" height="240" fill="#EFEFEF" />
-	<Dino position={position.y} />
-	{#each cactuses as cactus, index}
-		{#if index}
-			<Cactus variant={cactus.variant} position={cactus.position - position.x} />
-		{:else}
-			<Cactus
-				variant={cactus.variant}
-				position={cactus.position - position.x}
-				bind:ref={cactusRef}
-			/>
-		{/if}
-	{/each}
-	<path d="M0,230H1000V226H0Z" stroke="none" fill="#535353" />
-</svg>
-```
+<details>
+	<summary>Solution</summary>
+	<CodeBinding/>
+</details>
 
 On a "bindé" la référence à l'élément `svg` et récupéré la ref du premier cactus. Plutôt sobre comme écriture ? Vous pouvez faire la même chose pour ramener les deux ref dans `Game`.
 
@@ -126,6 +100,15 @@ Vous pouvez maintenant retourner dans notre boucle infinie pour détecter la col
 <details>
 	<summary>Solution</summary>
 	<CodeCollision/>
+</details>
+
+## Supprimer les cactus déjà passés
+
+Je vous avais dit plus haut : il va falloir supprimer les éléments déjà passés par le dinosaure pour que le premier dinosaure corresponde toujours à celui que le dinosaure est en train ou va sauter par-dessus. C'est le moment de le faire. Vous pouvez le faire dans la boucle de jeu dans le composant `Game`.
+
+<details>
+	<summary>Solution</summary>
+	<CodeDeleteFirstCactus/>
 </details>
 
 Le jeu est maintenant presque fini ! Votre dinosaure avance, peut sauter et éviter les obstacles ! S'il tombe sur un cactus, la partie est perdue ! Mais qu'en est-il du score ?!

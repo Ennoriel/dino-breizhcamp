@@ -32,7 +32,7 @@
 		{/each}
 	</ul>
 
-	<Pagination name={data.name} page={data.page} {nbPage} />
+	<Pagination name={data.name} currPage={data.page} {nbPage} />
 </div>
 
 <style>

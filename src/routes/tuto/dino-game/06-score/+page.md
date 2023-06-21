@@ -33,3 +33,5 @@ Vous avez fini le tutoriel mais il y a plein d'améliorations possibles :
 - gérer la puissance (durée) d'appui sur la touche espace pour sauter plus ou moins loin
 - ajouter un champ texte pour écrire son nom lorsque l'on a fait le meilleur score
 - enregistrer le meilleur score côté backend
+
+Si vous ne l'avez pas déjà fait, vous pouvez faire le [dinodex](/tuto/dinodex/00-introduction).

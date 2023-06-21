@@ -11,3 +11,9 @@
 		<h1>SvelteKit à l'attaque des dinosaures</h1>
 	</div>
 </Slide>
+
+<style>
+	h1 {
+		font-size: 72px !important;
+	}
+</style>
