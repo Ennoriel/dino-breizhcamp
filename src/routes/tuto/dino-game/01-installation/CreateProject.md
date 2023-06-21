@@ -2,15 +2,15 @@
 layout: false
 ---
 
-Aujourd'hui, quand on démarre un projet Svelte, il est recommandé d'utiliser SvelteKit dans tous les cas. Les options de compilation permettent de générer des applications statiques ou dynamiques, de pouvoir les inclure dans une application existente, etc.
+Aujourd'hui, quand on démarre un projet Svelte, il est recommandé d'utiliser SvelteKit dans tous les cas. Les options de compilation permettent de générer des applications statiques ou dynamiques, de pouvoir les inclure dans une application existante, etc.
 
 Créons donc un nouveau projet !
 
 ## Prérequis
 
-Pour ce faire, vous devez avoir un ordinateur, si ce n'est pas le cas, cherchez un ami avec qui travailler ! Sur cette ordinateur, vous devez avoir node (minimum 16) / npm. Si ce n'est pas le cas, vous pouvez [télécharger node en ligne](https://nodejs.org/en) (npm vient automatiquement avec node).
+Pour ce faire, vous devez avoir un ordinateur, si ce n'est pas le cas, cherchez un ami avec qui travailler ! Sur cet ordinateur, vous devez avoir node (minimum 16) / npm. Si ce n'est pas le cas, vous pouvez [télécharger node en ligne](https://nodejs.org/en) (npm vient automatiquement avec node).
 
-> vous êtes libres (et même encouragés) d'utiliser yarn ou pnpm
+> Vous êtes libres (et même encouragés) d'utiliser yarn ou pnpm
 
 ## Créer le projet
 
@@ -20,7 +20,7 @@ dans un terminal, lancez la commande suivante
 npm init svelte svelte-dino-breizhcamp
 ```
 
-Cette commande initialise un nouveau projet SvelteKit dans un dossier `svelte-dino-breizhcamp` là ou vous êtes situés. Vous allez devoir faire quelques choix pour configurer l'application. Je vous conseille de sélectionner :
+Cette commande initialise un nouveau projet SvelteKit dans un dossier `svelte-dino-breizhcamp` là où vous êtes situés. Vous allez devoir faire quelques choix pour configurer l'application. Je vous conseille de sélectionner :
 
 1. Skeleton project
 2. Yes, using TypeScript syntax
@@ -33,7 +33,7 @@ Les fichiers de configurations importants sont les suivants :
 - package.json : ce fichier définit tout projet node. La commande pour lancer le projet en local est `npm run dev`.
 - svelte.config.js : c'est le fichier de configuration de Svelte & SvelteKit. Pour nous tout est bon, il n'y a rien à change.
 - vite.config.js : c'est le fichier de configuration de vite, librairie utilisé par SvelteKit pour la compilation. Pour nous tout est bon, il n'y a rien à change.
-- tsconfig.json : c'est le fichier de configuration de typescript (si vous avez choisi typescript). Il n'y a rien a changé non plus.
+- tsconfig.json : c'est le fichier de configuration de typescript (si vous avez choisi typescript). Il n'y a rien à changer non plus.
 
 Ces fichiers permettent de configurer un projet de manière générale. Par défaut, il n'y a rien de bien compliqué, et la configuration par défaut permet même de déployer son application sur des services externes (Github pages, Vercel, Netlify, CloudFlare pages, etc.)
 

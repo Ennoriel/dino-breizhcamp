@@ -13,9 +13,9 @@ On commence à s'approcher de la fin. Le dinosaure peut sauter et avancer mais i
 
 ## La théorie
 
-La gestion des collision dans les jeux vidéos, c'est asssez simple en théorie, beaucoup plus compliqué en pratique.
+La gestion des collisions dans les jeux vidéos, c'est assez simple en théorie, beaucoup plus compliqué en pratique.
 
-En théorie, il suffit de savoir quand le dinosaure touche un cactus. En pratique, c'est assez compliqué car les deux formes ne sont pas régulières et les courbes des deux formes pas évidents.
+En théorie, il suffit de savoir quand le dinosaure touche un cactus. En pratique, c'est assez compliqué car les deux formes ne sont pas régulières et les courbes des deux formes pas évidentes.
 
 En pratique, il existe plein de solutions d'approximation (on pourrait considérer que nos objets sont rectangulaires ou circulaires) ce qui a longtemps été fait dans les jeux vidéos.
 
@@ -23,7 +23,7 @@ Dans notre cas, nous allons utiliser une méthode bien pratique des éléments s
 
 ## la pratique
 
-J'ai défini 5 points aux extrémités du dinosaures, pour lesquels on va aller vérifier qu'ils ne sont pas dans le premier cactus.
+J'ai défini 5 points aux extrémités du dinosaure, pour lesquels on va aller vérifier qu'ils ne sont pas dans le premier cactus. Si l'un des points et dans le premier cactus, on considérera que le jeu est perdu.
 
 Les fameux points :
 
@@ -119,7 +119,7 @@ et le `Board` :
 </svg>
 ```
 
-On a "bindé" la référence à l'élément `svg` et récupéré la ref du premier cactus. Plutôt sobre comme écriture ? Vous pouvez faire la même chose pour rammener les deux ref dans `Game`.
+On a "bindé" la référence à l'élément `svg` et récupéré la ref du premier cactus. Plutôt sobre comme écriture ? Vous pouvez faire la même chose pour ramener les deux ref dans `Game`.
 
 Vous pouvez maintenant retourner dans notre boucle infinie pour détecter la collision et utiliser une variable `lost` pour savoir si le joueur a perdu ou non !
 

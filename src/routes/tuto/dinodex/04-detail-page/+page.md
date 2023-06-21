@@ -9,7 +9,7 @@ title: Page de détails d'un dinosaure
   import CodeDetailPage from './CodeDetailPage.md';
 </script>
 
-## Créer une page dédié pour chaque dinosaure
+## Créer une page dédiée pour chaque dinosaure
 
 Nous allons afficher la liste avec des informations limitées pour chaque dinosaure et pour chaque dinosaure, une page dédiée, plus complète. Pour ce faire, il faut créer une route avec un **paramètre**. Rien de plus simple, il faut créer un dossier avec un nom de paramètre entre crochets : `/routes/dinodex/[name]`.
 

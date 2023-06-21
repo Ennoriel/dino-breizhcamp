@@ -14,7 +14,9 @@ title: Ajouter le cycle de vie de l'application
 De la même manière que le dinosaure, vous pouvez créer un cactus avec le code suivant :
 
 ```svelte
-<script>
+<script lang="tts">
+	// changer tts par ts. J'utilise "tts" car "ts" fait planter le compilateur pour une raison brumeuse...
+
 	export let position = 0;
 	export let variant: number;
 </script>
@@ -26,7 +28,7 @@ De la même manière que le dinosaure, vous pouvez créer un cactus avec le code
 />
 ```
 
-Dans ce composant, nous avons défini nos deux premières propriétés (props pour les intimes) `position` et `variant`. Une variable devient props dès qu'elle est exportée avec le mot clé `export`. Dans le cas d'un projet Svelte avec typescript, ces propriétés peuvent être typées !
+Dans ce composant, nous avons défini nos deux premières propriétés (props pour les intimes) `position` et `variant`. Une variable devient props dès qu'elle est exportée avec le mot clé `export`. Dans le cas d'un projet Svelte avec typescript, ces propriétés peuvent être typées, dès lors que vous avec ajouté `lang="ts"` au script !
 
 `variant` détermine la couleur de l'arbre via l'attribut html `fill` ; `position` définit la position du cactus.
 
@@ -36,13 +38,13 @@ Vous pouvez importer le cactus dans l'arbre et passer des propriétés fictives 
 <Cactus position={500} variant={1} />
 ```
 
-> A ce stade, vous avez tous les composants Svelte pour continuer. Nous allons les modifier pour finaliser le jeu. Si vous êtez perdu, vous pouvez retrouver le code source sur Github.
+> A ce stade, vous avez tous les composants Svelte pour continuer. Nous allons les modifier pour finaliser le jeu. Si vous êtes perdu, vous pouvez retrouver le code source sur Github.
 
-Pour aller plus loin, vous pouvez faire des variantes de cactus de différentes tailles, formes, couleurs, etc. Cela n'impactera pas la suite du tutoriel.
+Pour aller plus loin, vous pouvez faire des variantes de cactus de différentes tailles, formes, couleurs ! Soyez créatifs !
 
 ## Ajouter un objet de configuration des cactus
 
-Dans le jeu du dinosaures, plusieurs cactus sont présents en même temps sur le plateau. Les positions et variantes de cactus sont stockés dans un objet de configuration. Dans `Game.svelte`, vous pouvez ajouter une constante `cactuses` et l'initialiser avec un tableau avec un cactus.
+Dans le jeu du dinosaure, plusieurs cactus sont présents en même temps sur le plateau. Les positions et variantes de cactus sont stockées dans un objet de configuration. Dans `Game.svelte`, vous pouvez ajouter une constante `cactuses` et l'initialiser avec un tableau avec un premier cactus.
 
 Essayez de le passer comme props à `Board` puis d'utiliser la syntaxe de boucle pour définir plusieurs `Cactus` dans le DOM. La syntaxe de boucle en Svelte est la suivante :
 
@@ -59,14 +61,15 @@ Essayez de le passer comme props à `Board` puis d'utiliser la syntaxe de boucle
 
 ## Mise en place de la logique du jeu
 
-Maintenant que nous avons tous les éléments graphiques du jeu, il va falloir passer à l'implémentation de la logique. Beaucoup de chose vont se faire dans le composant `<Game/>`.
+Maintenant que nous avons tous les éléments graphiques du jeu, il va falloir passer à l'implémentation de la logique. Beaucoup de chose va se faire dans le composant `<Game/>`.
 
-Pour gérer l'avancée du dinosaure, nous pouvons utiliser une variable `dinoPos` que nous incrémenterons dans une boucle infinie. La boucle infinie doit être initialisé à l'instantiation du composant : une méthode est là pour ça : `onMount` (et en réalité, c'est une des seule, utilisée à plus de 99% dans mon cas :p)
+Pour gérer l'avancée du dinosaure, nous pouvons utiliser une variable `dinoPos` que nous incrémenterons dans une boucle infinie. La boucle infinie doit être initialisée à l'instanciation du composant : une méthode est là pour ça : `onMount` (et en réalité, c'est une des seuls, utilisée à plus de 99% dans mon cas :p)
 
 ```typescript
 import { onMount } from 'svelte';
 
 // initialisation des variables
+let dinoPos = 0;
 // ...
 
 onMount(() => {
@@ -81,7 +84,7 @@ onMount(() => {
 });
 ```
 
-`onMount` prend comme argument une méthode qui sera exécuté à l'instantiation du composant. Cette méthode peut renvoyer une méthode, si celle-ci est définie, elle sera appelé à la desctruction du composant, ce qui est bien pratique dans notre cas pour nettoyer la boucle infinie !
+`onMount` prend comme argument une méthode qui sera exécutée à l'instanciation du composant. Cette méthode peut renvoyer une méthode, si celle-ci est définie, elle sera appelée à la destruction du composant, ce qui est bien pratique dans notre cas pour nettoyer la boucle infinie !
 
 Vous pouvez maintenant incrémenter la position du dinosaure dans la boucle infinie et utiliser la variable pour positionner les cactus aux bons endroits afin de simuler l'avancée du dinosaure.
 

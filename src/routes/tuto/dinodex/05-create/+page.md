@@ -13,7 +13,7 @@ title: Ajouter un dinosaure
 
 La dernière étape est la création d'un formulaire pour ajouter un nouveau dinosaure !
 
-Nous n'irons pas jusqu'au bout car il n'y a pas de vrai base de données mais nous allons tout de même simuler une création de données !
+Nous n'irons pas jusqu'au bout car il n'y a pas de vraie base de données mais nous allons tout de même simuler une création de données !
 
 Vous pouvez créer une troisième route `/create` qui sera utilisée pour la création. Dans le fichier `+page.svelte`, vous pouvez ajouter un formulaire :
 

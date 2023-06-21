@@ -16,7 +16,7 @@ Ce workshop vous permettra de créer un jeu du dinosaure comme celui présent ju
     <Game/>
 </div>
 
-Vous n'aurez évidement absolument pas reconnu un dinosaure célèbre dans ce jeu !
+Vous n'aurez évidemment absolument pas reconnu un dinosaure célèbre dans ce jeu !
 
 Les commandes sont simples :
 

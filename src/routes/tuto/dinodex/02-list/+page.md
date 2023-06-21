@@ -31,7 +31,7 @@ Exemple :
 </style>
 ```
 
-Vous pouvez déjà, à ce stade définir et importer la police Jurassic Parc :
+Vous pouvez déjà, à ce stade, définir et importer la police Jurassic Parc :
 
 ```svelte
 <style>
@@ -61,7 +61,7 @@ Pour importer le contenu du JSON, il suffit de l'importer avec un import javascr
 </script>
 ```
 
-Pour afficher une liste, on utilisera une syntaxe particulière à Svelte, le block `#each` :
+Pour afficher une liste, on utilisera une syntaxe particulière à Svelte, le bloc `#each` :
 
 ```svelte
 {#each dinos as dino}
@@ -118,7 +118,7 @@ Vous pouvez continuer jusqu'à obtenir des cartes, les afficher proprement, de m
 
 Une fois ceci fait, on va s'attarder à créer un composant `DinoCard` pour séparer l'affichage d'un dinosaure de celui de la liste.
 
-Pour créer un composant, rien de plus simple, il suffit de créer un fichier Svelte avec l'extension `.svelte`. Il peut être créé dans le dossier `routes` mais on préfère généralement les ajouter dans `/src/lib/components`. Par exemple : `/src/lib/components/DinoCard.svelte` (sur le repo Github du projet, tout est dans `/src/routes/dinodex` par simplicité pour que vous retrouviez tout au même endroit).
+Pour créer un composant, rien de plus simple, il suffit de créer un fichier Svelte avec l'extension `.svelte`. Il peut être créé dans le dossier `routes`, mais on préfère généralement les ajouter dans `/src/lib/components`. Par exemple : `/src/lib/components/DinoCard.svelte` (sur le repo Github du projet, tout est dans `/src/routes/dinodex` par simplicité pour que vous retrouviez tout au même endroit).
 
 Vous pouvez alors déplacer le code du composant dans le nouveau composant. Pour déclarer une propriété `dino`, il faut préfixer le nom de la propriété par `export` :
 
@@ -194,7 +194,7 @@ Jusqu'à maintenant, nous avions importé les dinosaures directement dans la pag
 
 Si nous travaillions avec une base de données, on ne pourrait pas faire ça. On va considérer que notre fichier est notre base de données. On va donc déplacer le fichier dans `/src/lib/server`. Ce dossier est particulier : vous ne pourrez pas importer son contenu depuis une page directement ! (vous pouvez essayer, ça ne devrait pas marcher !)
 
-Il va alors falloir remonter les données via un fichier back. Celui ci est à créer au même endroit que la route, avec le nom `+page.server.ts` avec le contenu suivant :
+Il va alors falloir remonter les données via un fichier back. Celui-ci est à créer au même endroit que la route, avec le nom `+page.server.ts` avec le contenu suivant :
 
 ```ts
 // fichier +page.server.ts
@@ -222,5 +222,5 @@ Tout fichier `+page.server.ts` avec une méthode `load` définit un endpoint qui
 
 La gestion des routes et de l'API est faite avec SvelteKit. Ce mécanisme a un rôle central et a plusieurs bénéfices :
 
-- en réalité, lorsqu'un client va demander la page, SvelteKit va exécuter le code source `+page.svelte` côté serveur, se rendre compte qu'une api est associée, exécuter l'api et renvoyer la page déjà **hydraté** au client : c'est ce que l'on appelle le **rendu côté serveur** ;
+- en réalité, lorsqu'un client va demander la page, SvelteKit va exécuter le code source `+page.svelte` côté serveur, se rendre compte qu'une api est associée, exécuter l'api et renvoyer la page déjà **hydratée** au client : c'est ce que l'on appelle le **rendu côté serveur** ;
 - le passage de l'objet du back au front est complètement typé : vous pouvez essayer de lire une propriété qui n'existe pas, cela ne fonctionnera pas (par exemple `data.doesNotExist` ou `data.dinow[0]` => potentiellement undefined).

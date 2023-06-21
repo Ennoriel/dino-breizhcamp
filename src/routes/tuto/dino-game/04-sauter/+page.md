@@ -15,13 +15,13 @@ Il reste 3 choses à faire pour que le jeu ressemble à quelque chose :
 2. gérer la collision
 3. le tableau de score
 
-Commençons par permettre au dinosaure de sauter. Nous allons avoir besoin de trois variables et vous pouvez dors et déjà les créer dans le composant `Game`.
+Commençons par permettre au dinosaure de sauter. Nous allons avoir besoin de trois variables et vous pouvez d'ores et déjà les créer dans le composant `Game`.
 
 - `jumping` un booléen qui vaudra vrai / faux pour savoir si le dinosaure est en train de sauter
 - `jumpedAt` un nombre pour fixer la position de début de saut, nécessaire pour le calcul de la hauteur du dinosaure
 - `jumpPos` un nombre, la hauteur du dinosaure
 
-Pour "écouter" un événément clavier sur l'ensemble de la fenêtre il est possible d'utiliser l'événement particulier Svelte : `<svelte:window>`. A ce composant (comme à n'importe lequel autre), il est possible d'ajouter un event listener via : `on:myEvent={myHandler}`. Dans notre cas, nous aurons donc :
+Pour "écouter" un événement clavier sur l'ensemble de la fenêtre il est possible d'utiliser l'événement particulier Svelte : `<svelte:window>`. Cela permet d'ajouter un listener sur la fenêtre sans passer par un appel javascript. A ce composant (comme à n'importe lequel autre), il est possible d'ajouter un event listener via : `on:myEvent={myHandler}`. Dans notre cas, nous aurons donc :
 
 ```svelte
 <script>

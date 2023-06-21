@@ -7,12 +7,13 @@ title: Créer le dino
 
 <script>
     import Game from '$lib/components/game/Game.svelte';
-    import CodeA from './CodeA.md';
+    import CodeBoard from './CodeBoard.md';
+    import CodeGame from './CodeGame.md';
 </script>
 
-Le contenu que vous pouvez voir dans votre navigateur <a href="http://localhost:5173" target="_blank">http://localhost:5173</a> se situe dans le fichier `/src/routes/+page.svelte`. Nous allons faire les premières étapes du tutoriel dans ce fichier.
+Selon si vous avez déjà fait le premier tutoriel, le contenu que vous pouvez voir dans votre navigateur <a href="http://localhost:5173" target="_blank">http://localhost:5173</a> se situe dans le fichier `/src/routes/+page.svelte`. Nous allons faire les premières étapes du tutoriel dans ce fichier. Vous pouvez également créer une route dédiée.
 
-Commencer par supprimer le conteu du fichier et ajouter un titre :
+Commencer par supprimer le contenu du fichier et ajouter un titre :
 
 ```svelte
 <h1>Le super jeu du dinosaure du BreizhCamp !</h1>
@@ -44,11 +45,11 @@ Le plateau du jeu est un élément HTML de type `svg`. Vous pouvez donc commence
 
 1. définir le conteneur `svg`.
 2. ajouter un fond que vous pouvez choisir au choix. Moi j'ai pris un fond gris très simple !
-3. ajouter un sol. Dans un élément `svg` l'origine est en haut à gauche, la valeur de x croissante vers la droite et de y croissante vers le bas (contre intuitif).
+3. ajouter un sol. Dans un élément `svg` l'origine est en haut à gauche, la valeur de x croissante vers la droite et de y croissante vers le bas.
 
 <details>
   <summary>Solution</summary>
-    <CodeA/>
+    <CodeBoard/>
 </details>
 
 ## Ajouter le dinosaure
@@ -66,22 +67,22 @@ Vous pouvez ajouter le dinosaure :
 </g>
 ```
 
-La balise `<g>` permettra par la suite de gérer le déplacement du dinosaure.
+La balise `<g>` permettra par la suite de gérer le déplacement du dinosaure complet (les deux `path` à la fois).
 
-Si la position du dinosaure n'est pas adéquat, avec le sol, n'hésitez pas à reprendre exactement la solution au dessus.
+Si la position du dinosaure n'est pas adéquate, avec le sol, n'hésitez pas à reprendre exactement la solution au-dessus.
 
 ## Utiliser des composants
 
-Le code qui se trouve dans le fichier `+page.svelte` n'est pas très long ni très compliqué mais il regroupe plusieurs objets métiers (un dinosaure, un plateau de jeu, un terrain) et ce serait bien de commencer à créer des composants ! Cela facilite la compréhension et le débuggage par la suite. Pour ça rien de plus simple :
+Le code qui se trouve dans le fichier `+page.svelte` n'est pas très long ni très compliqué mais il regroupe plusieurs objets métiers (un dinosaure, un plateau de jeu, un terrain) et ce serait bien de commencer à créer des composants ! Cela facilite la compréhension et le débogage par la suite. Pour ça rien de plus simple :
 
-Créer le dossier `lib` dans `src` à côté de `routes` si ce n'est pas déjà fait.
+Créer le dossier `lib` dans `src` à côté de `routes` si ce n'est pas déjà fait. Le dossier `lib` est l'emplacement de tout votre code métier et peut être appelé avec l'alias `$lib` (`import something from '$lib/somewhere.svelte`).
 
 Créer le dossier `components` dans le dossier `lib`.
 
 Tout fichier avec l'extension `.svelte` pourra être utilisé comme composant Svelte. Par convention, les composants commencent avec une majuscule. Vous pouvez donc créer
 
 - `Dino.svelte` et y ajouter le code du dinosaure
-- `Board.svelte` : pour utiliser le dinosaure dans le plateau, il faudra l'importer comme suite :
+- `Board.svelte` pour utiliser le dinosaure dans le plateau, il faudra l'importer comme suite :
 
 ```svelte
 <script>
@@ -101,9 +102,14 @@ Vous pouvez importer le plateau `Board` de la même manière dans le fichier `+p
 
 ## Créer un composant Game
 
-Les composants `Board`, `Dino` (et par la suite `Cactus`) sont des composants d'affichage et n'auront pas de logique. Pour ne pas placer la logique directement dans `+page.svelte`, créez un nouveau composant `Game.svelte` qui importe le composant `Board` et utilisez le dans `+page.svelte`.
+Les composants `Board`, `Dino` (et par la suite `Cactus`) sont des composants d'affichage. Pour ne pas placer la logique directement dans `+page.svelte`, créez un nouveau composant `Game.svelte` qui importe le composant `Board` et utilisez-le dans `+page.svelte`.
 
 Ce nouveau composant contiendra le code métier.
+
+<details>
+  <summary>Solution</summary>
+    <CodeGame/>
+</details>
 
 <style>
     .board-wrapper {

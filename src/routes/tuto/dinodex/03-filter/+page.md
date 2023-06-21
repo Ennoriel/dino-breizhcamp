@@ -41,7 +41,7 @@ Pour récupérer le contenu de l'input, il y a plusieurs solutions, la plus simp
 
 Le mot clé `bind:` permet d'avoir le binding dans les deux sens : si vous initialisez `name`, cela initialisera le champ et vous récupérerez le contenu du champ dans la variable `name`.
 
-Pour utiliser et filtrer de manière réactive, vous pouvez utiliser la strucutre `$:` :
+Pour utiliser et filtrer de manière réactive, vous pouvez utiliser la structure `$:` :
 
 ```svelte
 <script>
@@ -76,9 +76,9 @@ Si vous souhaitez ajouter des filtres supplémentaires, sachez que les binding d
 
 ## Filtrer côté back
 
-Le filtrage côté front est simple mais avec beaucoup de données, nous devons gérer le filtrage (et la pagination) côté back !
+Le filtrage côté front est simple, mais avec beaucoup de données, nous devons gérer le filtrage (et la pagination) côté back !
 
-Pour ce faire, vous pouvez supprimer le binding précédement créé et on va passer par un formulaire natif :
+Pour ce faire, vous pouvez supprimer le binding précédemment créé et on va passer par un formulaire natif :
 
 ```svelte
 <form>
@@ -111,7 +111,7 @@ Ce n'est pas plus compliqué que ça ! L'avantage de ce mécanisme qui pourrait 
 
 ## Pagination
 
-Je vous laisse réfléchir à la meilleur manière d'implémenter la pagination.
+Je vous laisse réfléchir à la meilleure manière d'implémenter la pagination.
 
 <details>
   <summary>Petite aide (conseillée)</summary>

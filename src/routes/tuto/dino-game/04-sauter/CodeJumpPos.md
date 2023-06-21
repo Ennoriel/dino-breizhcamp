@@ -1,3 +1,7 @@
+---
+layout: false
+---
+
 ```typescript
 // increment jumpedAt and compute the dinosaur jump position
 jumpedAt++;

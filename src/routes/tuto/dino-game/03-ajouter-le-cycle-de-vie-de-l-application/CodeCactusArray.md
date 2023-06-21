@@ -1,3 +1,7 @@
+---
+layout: false
+---
+
 ```svelte
 <script>
 	import Board from './Board.svelte';

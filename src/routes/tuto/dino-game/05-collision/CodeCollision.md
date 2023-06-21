@@ -1,3 +1,7 @@
+---
+layout: false
+---
+
 ```typescript
 // handle collision with native svg element isPointInFill method
 const firstCactusRelativePos = cactuses[0].position - dinoPos;
