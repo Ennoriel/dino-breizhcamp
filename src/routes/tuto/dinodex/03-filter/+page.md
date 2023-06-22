@@ -51,7 +51,7 @@ Pour utiliser et filtrer de manière réactive, vous pouvez utiliser la structur
 	let filteredDinos = data.dinos;
 
 	$: {
-		const nameRegExp = name ? new RegExp(name) : undefined;
+		const nameRegExp = name ? new RegExp(name, 'i') : undefined;
 
 		filteredDinos = data.dinos.filter((dino) => !nameRegExp || nameRegExp.test(dino.name));
 	}
@@ -89,13 +89,13 @@ Pour ce faire, vous pouvez supprimer le binding précédemment créé et on va p
 
 En cliquant sur le bouton, le formulaire va nativement rediriger l'utilisateur avec un query param `name`, par exemple `/dinodex?name=rex`. Celui-ci est géré par la même route.
 
-Il est alors possible de récupérer le query param côté back, dans `+page.server.ts` :
+Il est alors possible de récupérer le query param côté back, dans `+page.server.ts` et de filtrer les résultats :
 
 ```
 export const load = async ({ url }) => {
 	const name = url.searchParams.get('name');
 
-  const nameRegExp = name ? new RegExp(name) : undefined;
+  const nameRegExp = name ? new RegExp(name, 'i') : undefined;
 
 	const filteredDinos = (dinos as Array<Dino>).filter(
 		(dino) => !nameRegExp || nameRegExp.test(dino.name)
@@ -108,6 +108,8 @@ export const load = async ({ url }) => {
 ```
 
 Ce n'est pas plus compliqué que ça ! L'avantage de ce mécanisme qui pourrait sembler archaïque (formulaire natif) est en fait super intéressant car il a l'avantage de fonctionner sans javascript côté client !
+
+Notez aussi que la logique est mise dans la méthode `load` mais il est également possible de séparer le code métier afin de pouvoir le tester unitairement.
 
 ## Pagination
 

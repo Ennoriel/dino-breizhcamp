@@ -10,7 +10,7 @@ title: Introduction
     import GeneralDetails from './GeneralDetails.md';
 </script>
 
-Ce workshop vous permettra de créer un jeu du dinosaure comme celui présent juste en dessous avec Svelte ! Il est constitué d'un svg, d'une boucle infinie pour gérer l'avancée du dinosaure et de gestionnaires d'événements (onClick & co).
+Ce workshop vous permettra de créer un jeu du dinosaure comme celui présent juste en dessous avec Svelte (également disponible sur <a href="/dinogame" target="_blank">une page dédiée</a> pour pouvoir le garder ouvert à côté du tutoriel) ! Il est constitué d'un svg, d'une boucle infinie pour gérer l'avancée du dinosaure et de gestionnaires d'événements (onClick & co).
 
 <div class="board-wrapper">
     <Game/>

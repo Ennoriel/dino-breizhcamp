@@ -12,7 +12,7 @@ export const load = async ({ url }) => {
 	const name = url.searchParams.get('name') || undefined;
 	const page = parseInt(url.searchParams.get('page') || '0');
 	const perPage = parseInt(url.searchParams.get('perPage') || '10');
-	const nameRegExp = name ? new RegExp(name) : undefined;
+	const nameRegExp = name ? new RegExp(name, 'i') : undefined;
 
 	const filteredDinos = (dinos as Array<Dino>).filter(
 		(dino) => !name || nameRegExp?.test(dino.name)
