@@ -24,20 +24,20 @@ Cette commande initialise un nouveau projet SvelteKit dans un dossier `svelte-di
 
 1. Skeleton project
 2. Yes, using TypeScript syntax
-3. "Add ESLint for code linting" et "Add Prettier for code formatting"
+3. ne cocher aucune case
 
 A ce stade, vous pouvez ouvrir le dossier dans un IDE (VSCode ou autre).
 
 Les fichiers de configurations importants sont les suivants :
 
 - package.json : ce fichier définit tout projet node. La commande pour lancer le projet en local est `npm run dev`.
-- svelte.config.js : c'est le fichier de configuration de Svelte & SvelteKit. Pour nous tout est bon, il n'y a rien à change.
-- vite.config.js : c'est le fichier de configuration de vite, librairie utilisé par SvelteKit pour la compilation. Pour nous tout est bon, il n'y a rien à change.
+- svelte.config.js : c'est le fichier de configuration de Svelte & SvelteKit. Pour nous tout est bon, il n'y a rien à changer.
+- vite.config.js : c'est le fichier de configuration de vite, librairie utilisé par SvelteKit pour la compilation. Pour nous tout est bon, il n'y a rien à changer.
 - tsconfig.json : c'est le fichier de configuration de typescript (si vous avez choisi typescript). Il n'y a rien à changer non plus.
 
 Ces fichiers permettent de configurer un projet de manière générale. Par défaut, il n'y a rien de bien compliqué, et la configuration par défaut permet même de déployer son application sur des services externes (Github pages, Vercel, Netlify, CloudFlare pages, etc.)
 
-Le code source est concentré dans l'arborescence suivante :
+Le code source se trouve dans les dossiers suivants :
 
 - /static : les fichiers statiques...
 - /src/routes : toutes les routes de l'application. Les urls seront générés avec l'arborescence (le fichier `/src/routes/ma/route/+page.svelte` générera une url /ma/route).

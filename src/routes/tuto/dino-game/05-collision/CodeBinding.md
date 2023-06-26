@@ -3,8 +3,7 @@ layout: false
 ---
 
 ```svelte
-<script>
-	// ajouter lang="ts"
+<script lang\="ts">
 	import Dino from './Dino.svelte';
 	import Cactus from './Cactus.svelte';
 	import type { Cactus as CactusType } from './utils.js';

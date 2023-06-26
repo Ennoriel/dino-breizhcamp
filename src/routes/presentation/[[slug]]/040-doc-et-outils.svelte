@@ -10,7 +10,7 @@
 			<li><a target="_blank" href="https://kit.svelte.dev/docs">Documentation Svelte Kit</a></li>
 			<li><a target="_blank" href="https://svelte.dev/repl">Bac à sable</a></li>
 			<li>
-				<a target="_blank" href="https://www.sveltelab.dev/">Bac à sable Svelte Kit</a> (extene)
+				<a target="_blank" href="https://www.sveltelab.dev/">Bac à sable Svelte Kit</a> (externe)
 			</li>
 		</ul>
 	</Slide>

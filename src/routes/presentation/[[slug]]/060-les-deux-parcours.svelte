@@ -21,7 +21,9 @@
 
 	<Slide>
 		<h1>lien des tutoriels</h1>
-		<a href="https://dino-breizhcamp.vercel.app">https://dino-breizhcamp.vercel.app</a>
+		<a href="https://dino-breizhcamp.vercel.app" target="_blank"
+			>https://dino-breizhcamp.vercel.app</a
+		>
 	</Slide>
 </Slide>
 

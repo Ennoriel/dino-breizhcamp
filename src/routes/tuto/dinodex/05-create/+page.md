@@ -58,6 +58,10 @@ Notez que depuis le début, les écritures sont à la fois nouvelles, et à la f
 Dans cette méthode, on peut vérifier la validité des données (avec des règles simplettes) :
 
 ```typescript
+import { fail } from '@sveltejs/kit';
+
+// ...
+
 if (!name || typeof name !== 'string' || name.length < 3) {
 	return fail(400, { name: 'Le nom du dinosaure doit faire 3 caractères au minimum.' });
 }
@@ -67,7 +71,7 @@ La méthode `fail` permet de retourner un objet d'erreur au front. Cet objet ser
 
 ```svelte
 <script>
-	import { enhance } from '$app/forms';
+	export let form;
 </script>
 
 <form>
@@ -91,6 +95,10 @@ Une fois validé, il faudrait ajouter le dinosaure à la base de données. Nous 
 Une fois le dinosaure "enregistré", on peut rediriger l'utilisateur vers la liste des dinosaures avec la méthode `fail` :
 
 ```typescript
+import { redirect } from '@sveltejs/kit';
+
+// ...
+
 throw redirect(303, '/dinodex');
 ```
 

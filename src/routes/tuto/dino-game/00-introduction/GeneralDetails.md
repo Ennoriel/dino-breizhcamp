@@ -22,7 +22,7 @@ Svelte est un framework de développement d'interfaces avec quelques spécificit
 
 Vous pouvez consulter [la documentation de Svelte](https://svelte.dev/docs) et même écrire du code Svelte en ligne dans l'[éditeur en ligne (REPL)](https://svelte.dev/repl).
 
-SvelteKit est un framework pour construire des applications (fullstack : front + back !) basé sur le framework Svelte. Il permet de construire des applications de type SPA (application sur une seule page comme GMail), des MPA (gestion des routes / urls nativement) avec du rendu côté serveur =&gt; beaucoup plus performant ! Vous pouvez consulter [la documentation de SvelteKit](https://kit.svelte.dev/docs/introduction) en ligne.
+SvelteKit est un framework pour construire des applications (fullstack : front + back !) basé sur le framework Svelte. Il permet de construire des applications de type SPA (single page application, application sur une seule page comme GMail), des MPA (multiple page application, gestion des routes / urls nativement) avec du rendu côté serveur =&gt; beaucoup plus performant ! Vous pouvez consulter [la documentation de SvelteKit](https://kit.svelte.dev/docs/introduction) en ligne.
 
 Voilà, c'était la petite partie théorique. Si vous n'avez pas tout compris, ce n'est pas très grave, passons à la pratique !
 

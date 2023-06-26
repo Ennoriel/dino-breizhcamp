@@ -70,8 +70,7 @@ En svelte, pour récupérer la référence d'un objet, on peut utiliser `documen
 Dans le composant cactus, on aura maintenant le composant complet :
 
 ```svelte
-<script>
-	// rajouter lang="ts"
+<script lang\="ts">
 	export let position = 0;
 	export let variant: number;
 

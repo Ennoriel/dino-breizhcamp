@@ -14,9 +14,7 @@ title: Ajouter le cycle de vie de l'application
 De la même manière que le dinosaure, vous pouvez créer un cactus avec le code suivant :
 
 ```svelte
-<script lang="tts">
-	// changer tts par ts. J'utilise "tts" car "ts" fait planter le compilateur pour une raison brumeuse...
-
+<script lang\="ts">
 	export let position = 0;
 	export let variant: number;
 </script>

@@ -10,6 +10,7 @@
 			<li>2016: Ractive.js</li>
 			<li>2019: Svelte v3</li>
 			<li>2021: SvelteKit</li>
+			<li>22 juin 2023: Svelte v4</li>
 		</ul>
 	</Slide>
 
@@ -75,6 +76,10 @@
 				</ul>
 			</li>
 		</ul>
+	</Slide>
+
+	<Slide backgroundColor="aquamarine">
+		<h1>Cette présentation est écrite en Svelte !</h1>
 	</Slide>
 </Slide>
 

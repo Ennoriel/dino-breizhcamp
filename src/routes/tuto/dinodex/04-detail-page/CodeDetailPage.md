@@ -16,7 +16,7 @@ export const load = async ({ params }) => {
 Code de la page :
 
 ```svelte
-<script lang="ts">
+<script lang\="ts">
 	import DinoCard from '../DinoCard.svelte';
 
 	export let data;
