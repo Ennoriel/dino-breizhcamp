@@ -24,6 +24,7 @@
 		<a href="https://dino-breizhcamp.vercel.app" target="_blank"
 			>https://dino-breizhcamp.vercel.app</a
 		>
+		<p><strong>dinoWifi</strong> : dinoPassw0rd</p>
 	</Slide>
 </Slide>
 
