@@ -19,7 +19,8 @@
 
 	onMount(async () => {
 		plugins = [
-			await import('reveal.js/plugin/highlight/highlight').then((res) => res.default)
+			await import('reveal.js/plugin/highlight/highlight').then((res) => res.default),
+			await import('reveal.js/plugin/notes/notes').then((res) => res.default)
 			// await import('reveal.js/plugin/markdown/markdown').then(res => res.default)
 		];
 	});

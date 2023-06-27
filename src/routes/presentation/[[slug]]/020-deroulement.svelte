@@ -11,14 +11,6 @@
 			<li>10 minutes pour discuter</li>
 		</ul>
 	</Slide>
-
-	<Slide>
-		<h1>Quelques règles</h1>
-		<ul>
-			<li>Règle des deux pieds 👣</li>
-			<li>Les questions ❓</li>
-		</ul>
-	</Slide>
 </Slide>
 
 <style>

@@ -24,7 +24,7 @@
 <style>
 	div {
 		display: grid;
-		grid-template-columns: 1fr 1fr;
+		grid-template-columns: 1fr;
 		align-items: center;
 		justify-content: center;
 		height: 100vh;
@@ -37,10 +37,20 @@
 
 	img {
 		margin: auto;
+		display: none;
 	}
 
 	a {
 		color: white;
 		text-decoration: underline;
+	}
+
+	@media (min-width: 768px) {
+		div {
+			grid-template-columns: 1fr 1fr;
+		}
+		img {
+			display: block;
+		}
 	}
 </style>

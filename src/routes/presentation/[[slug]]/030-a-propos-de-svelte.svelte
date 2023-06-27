@@ -5,13 +5,24 @@
 <Slide>
 	<Slide>
 		<h1>Le framework</h1>
+	</Slide>
+
+	<Slide>
+		<h1>Le framework</h1>
+		<img
+			src="https://avatars.githubusercontent.com/u/1162160?v=4"
+			height="200"
+			style:margin-right="64px"
+			alt="Rich Harris face"
+		/>
 		<ul>
 			<li>Rich Harris</li>
-			<li>2016: Ractive.js</li>
-			<li>2019: Svelte v3</li>
-			<li>2021: SvelteKit</li>
-			<li>22 juin 2023: Svelte v4</li>
+			<li class="fragment">2016: Ractive.js</li>
+			<li class="fragment">2019: Svelte v3</li>
+			<li class="fragment">2021: SvelteKit</li>
+			<li class="fragment">22 juin 2023: Svelte v4</li>
 		</ul>
+		<aside class="notes">The guardian</aside>
 	</Slide>
 
 	<Slide>

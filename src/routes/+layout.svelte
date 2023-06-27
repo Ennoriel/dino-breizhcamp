@@ -79,7 +79,13 @@
 		font-size: 64px;
 		line-height: 1.15;
 	}
+
 	nav *:hover {
 		text-decoration: underline;
+	}
+
+	@font-face {
+		font-family: 'Jurassic Parc';
+		src: url('/jurassic-parc.ttf') format('truetype');
 	}
 </style>
