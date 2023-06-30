@@ -45,7 +45,7 @@ Vous pouvez déjà, à ce stade, définir et importer la police Jurassic Parc :
 <style>
 	h1 {
 		color: blue;
-		font-familly: 'Jurassic Parc', sans-serif;
+		font-family: 'Jurassic Parc', sans-serif;
 		font-size: 48px;
 		text-align: center;
 	}
